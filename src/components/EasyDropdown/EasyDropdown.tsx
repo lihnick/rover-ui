@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useMemo, useState, ReactElement } from 'react';
+import React, { useCallback, useMemo, useState, ReactElement } from 'react';
 import classNames from 'classnames';
 
 import Button from '../Button';
@@ -11,6 +11,10 @@ import type { ItemProps } from '../Dropdown/Menu/Item/Item';
 import type { ButtonElementProps } from '../Button/Button';
 
 export type MenuItem = ItemProps & {
+  forwardedRef?:
+    | React.RefObject<HTMLDivElement>
+    | React.RefObject<HTMLAnchorElement>
+    | React.RefObject<HTMLButtonElement>;
   /** If you provide group IDs, the menu items will be grouped with dividers between them. */
   group?: string;
   /** This will be the array key and the fallback contents */
